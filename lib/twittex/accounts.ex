@@ -354,4 +354,8 @@ defmodule Twittex.Accounts do
       {:error, :user, changeset, _} -> {:error, changeset}
     end
   end
+
+  def get_user_by_username!(username) do
+    Repo.get_by!(User, username: username)
+  end
 end
